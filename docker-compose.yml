@@ -13,23 +13,32 @@ services:
     ports:
       - "8000:8000"
     depends_on:
-      - mysql
+      - db
     networks:
       - laravel-net
     command: "php artisan serve --host=0.0.0.0 --port=8000"
 
+  adminer:
+    image: adminer
+    container_name: laravel-adminer
+    ports:
+      - "8080:8080"
+    networks:
+      - laravel-net
+
   # Configuración del contenedor de MySQL
-  mysql:
+  db:
     image: mysql:8.0
     container_name: laravel-db
     volumes:
       - ./db/mysql_data:/var/lib/mysql  # Mapea la carpeta del contenedor al host
       - ./db/mysql_config:/etc/mysql/conf.d  # Mapea configuraciones personalizadas, si las tienes
     environment:
-      MYSQL_ROOT_PASSWORD: x0g5-OLs3-vcDj-8fl2-5hIJ
-      MYSQL_DATABASE: laravel
-      MYSQL_USER: laravel
-      MYSQL_PASSWORD: x0g5-OLs3-vcDj-8fl2-5hIJ
+      MYSQL_ROOT_PASSWORD: passwd
+      MYSQL_DATABASE: ${DB_NAME}
+      MYSQL_USER: ${DB_USER}
+      MYSQL_PASSWORD: ${DB_PASSWORD}
+      MYSQL_ROOT_HOST: "%"
     ports:
       - "3306:3306"
     networks:
