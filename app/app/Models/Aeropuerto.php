@@ -8,7 +8,7 @@ use App\Models\Ciudad;
 
 class Aeropuerto extends Model
 {
-    public function Aeropuerto() {
+    public function ciudad() {
         return $this->belongsTo(Ciudad::class);
     }
 }
