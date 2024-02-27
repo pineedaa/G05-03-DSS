@@ -16,7 +16,7 @@ services:
       - db
     networks:
       - laravel-net
-    command: "php artisan serve --host=0.0.0.0 --port=8000"
+    command: "composer install; php artisan serve --host=0.0.0.0 --port=8000"
 
   adminer:
     image: adminer
