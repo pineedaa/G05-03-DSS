@@ -19,8 +19,11 @@ return new class extends Migration
             $table->string('telefono');
             $table->string('email')->unique();
             $table->string('password');
+            // Comunicar con la tabla ciudad
+            $table->foreignId('ciudad_id')->constrained('ciudad')->cascadeOnDelete();
         });
     }
+
 
     /**
      * Reverse the migrations.

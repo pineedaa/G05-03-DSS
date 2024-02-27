@@ -14,9 +14,9 @@ return new class extends Migration
         Schema::create('aeropuerto', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->string('nombre');
             // Comunicar con la tabla ciudad
             $table->foreignId('ciudad_id')->constrained('ciudad')->cascadeOnDelete();
-            $table->string('nombre');
         });
     }
 
