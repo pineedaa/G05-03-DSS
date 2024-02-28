@@ -9,11 +9,15 @@ use App\Models\Usuario;
 
 class Ciudad extends Model
 {
-    public function aeropuerto() {
+    use HasFactory;
+
+    protected $table = 'ciudad';
+
+    public function aeropuertos() {
         return $this->hasMany(Aeropuerto::class);
     }
 
-    public function usuario() {
+    public function usuarios() {
         return $this->hasMany(Usuario::class);
     }
 }
