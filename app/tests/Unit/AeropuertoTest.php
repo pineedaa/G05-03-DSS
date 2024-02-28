@@ -14,7 +14,9 @@ class AeropuertoTest extends TestCase
      */
     public function test_creacion_de_aeropuertos()
     {
-        Aeropuerto::factory()->count(10)->create();
+        Aeropuerto::factory()
+            ->count(10)
+            ->create();
 
         $this->assertDatabaseCount('aeropuerto', 10);
     }

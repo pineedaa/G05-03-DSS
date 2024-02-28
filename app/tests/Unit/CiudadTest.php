@@ -14,7 +14,9 @@ class CiudadTest extends TestCase
      */
     public function test_creacion_de_ciudades()
     {
-        Ciudad::factory()->count(30)->create();
+        Ciudad::factory()
+            ->count(30)
+            ->create();
 
         $this->assertDatabaseCount('ciudad', 30);
     }

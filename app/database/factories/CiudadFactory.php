@@ -18,9 +18,9 @@ class CiudadFactory extends Factory
     public function definition(): array
     {
         return [
-            'ciudad' => $this->faker->city(),
-            'provincia' => $this->faker->state(),
-            'pais' => $this->faker->country()
+            'ciudad' => $this->faker->city,
+            'provincia' => $this->faker->state,
+            'pais' => $this->faker->country
         ];
     }
 }

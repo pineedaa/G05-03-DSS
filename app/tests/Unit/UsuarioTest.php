@@ -14,7 +14,9 @@ class UsuarioTest extends TestCase
      */
     public function test_creacion_de_usuarios()
     {
-        usuario::factory()->count(100)->create();
+        Usuario::factory()
+            ->count(100)
+            ->create();
 
         $this->assertDatabaseCount('usuarios', 100);
     }

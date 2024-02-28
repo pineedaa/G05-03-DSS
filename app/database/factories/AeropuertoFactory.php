@@ -19,7 +19,7 @@ class AeropuertoFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre' => 'Aeropuerto ' . $this->faker->company(),
+            'nombre' => 'Aeropuerto ' . $this->faker->company,
             'ciudad_id' => Ciudad::factory(),
         ];
     }

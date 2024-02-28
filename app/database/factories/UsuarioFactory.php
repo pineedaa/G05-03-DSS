@@ -20,10 +20,10 @@ class UsuarioFactory extends Factory
     public function definition(): array
     {
         return [
-            'nombre' => $this->faker->name(),
-            'apellido' => $this->faker->lastName(),
-            'email' => $this->faker->unique()->safeEmail(),
-            'telefono' => $this->faker->phoneNumber(),
+            'nombre' => $this->faker->name,
+            'apellido' => $this->faker->lastName,
+            'email' => $this->faker->unique()->safeEmail,
+            'telefono' => $this->faker->phoneNumber,
             'password' => Str::random(10),
             'ciudad_id' => Ciudad::factory()
         ];
