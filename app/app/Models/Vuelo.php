@@ -4,20 +4,20 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
-use App\Models\Aeropuerto;
+use App\Models\Ciudad;
 use App\Models\Usuario;
 
-class Ciudad extends Model
+class Vuelo extends Model
 {
     use HasFactory;
 
-    protected $table = 'ciudad';
+    protected $table = 'vuelo';
 
-    public function aeropuertos() {
-        return $this->hasMany(Aeropuerto::class);
+    public function ciudad() {
+        return $this->hasMany(Ciudad::class);
     }
 
     public function usuario() {
-        return $this->hasMany(Usuario::class);
+        return $this->belongsToMany(Usuario::class);
     }
 }

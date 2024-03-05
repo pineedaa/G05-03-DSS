@@ -11,25 +11,22 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('usuario', function (Blueprint $table) {
+        Schema::create('jet', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
             $table->string('nombre');
-            $table->string('apellido');
-            $table->string('telefono');
-            $table->string('email')->unique();
-            $table->string('password');
+            $table->string('marca');
+            $table->unsignedInteger('aforo');
+
             // Comunicar con la tabla ciudad
-            $table->foreignId('ciudad_id')->constrained('ciudad')->cascadeOnDelete();
+            $table->foreignId('ciudad_id')->constrained('ciudad');
         });
     }
-
 
     /**
      * Reverse the migrations.
      */
     public function down(): void
     {
-        Schema::dropIfExists('usuario');
+        Schema::dropIfExists('jet');
     }
 };
