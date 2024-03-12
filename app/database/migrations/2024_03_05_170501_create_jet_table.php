@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('jet', function (Blueprint $table) {
             $table->id();
+            $table->timestamps();
             $table->string('nombre');
             $table->string('marca');
             $table->unsignedInteger('aforo');

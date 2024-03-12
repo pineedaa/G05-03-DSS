@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('vuelo', function (Blueprint $table) {
             $table->id();
+            $table->timestamps();
             $table->date('fecha_salida');
             $table->date('fecha_llegada');
 

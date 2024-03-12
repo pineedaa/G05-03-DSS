@@ -13,6 +13,7 @@ return new class extends Migration
     {
         Schema::create('valoracion', function (Blueprint $table) {
             $table->id();
+            $table->timestamps();
             $table->integer('puntuacion');
             $table->string('comentario');
 
