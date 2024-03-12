@@ -12,15 +12,23 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\Aeropuerto::factory()
-            ->count(10)
-            ->create();
-
         \App\Models\Usuario::factory()
             ->count(10)
             ->create();
 
         \App\Models\Ciudad::factory()
+            ->count(10)
+            ->create();
+
+        \App\Models\Valoracion::factory()
+            ->count(10)
+            ->create();
+
+        \App\Models\Vuelo::factory()
+            ->count(10)
+            ->create();
+
+        \App\Models\Jet::factory()
             ->count(10)
             ->create();
 
