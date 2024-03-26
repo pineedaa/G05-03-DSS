@@ -2,7 +2,8 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+// use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
 use \App\Models\Usuario;
 
 class UsuarioTest extends TestCase
@@ -18,7 +19,7 @@ class UsuarioTest extends TestCase
             ->count(100)
             ->create();
 
-        $this->assertDatabaseCount('usuarios', 100);
+        $this->assertDatabaseCount('usuario', 100);
     }
 
 }

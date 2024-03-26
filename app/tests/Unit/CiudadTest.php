@@ -2,7 +2,9 @@
 
 namespace Tests\Unit;
 
-use PHPUnit\Framework\TestCase;
+// use PHPUnit\Framework\TestCase;
+use Tests\TestCase;
+use Faker\Generator as Faker;
 use \App\Models\Ciudad;
 
 class CiudadTest extends TestCase
@@ -18,7 +20,8 @@ class CiudadTest extends TestCase
             ->count(30)
             ->create();
 
-        $this->assertDatabaseCount('ciudad', 30);
+        // Verificar que se crearon 30 CiudadTest
+        $this->assertEquals(30, Ciudad::count());
     }
 
 }
